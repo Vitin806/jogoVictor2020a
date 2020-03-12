@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 741387589}
   - component: {fileID: 741387591}
   - component: {fileID: 741387590}
+  - component: {fileID: 741387592}
   m_Layer: 0
   m_Name: Nexus
   m_TagString: Finish
@@ -260,6 +261,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &741387592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741387588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfd69328ba74c2428766ff22c66f083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactRadius: 1.46
+  currentHealth: 0
+  stats:
+    maxHealth: 100
+    damage: 10
+    armor: 1
+    attackSpeed: 1
 --- !u!1 &788027169
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +292,6 @@ GameObject:
   - component: {fileID: 788027173}
   - component: {fileID: 788027172}
   - component: {fileID: 788027171}
-  - component: {fileID: 788027174}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -308,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab990f3ebf7c5834eb73dd4608b94fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contactRadius: 0.5
   walkableLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -349,19 +369,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &788027174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788027169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd85d257029398247bb9f2d4003d0660, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contactRadius: 0.5
 --- !u!1 &835198545
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203767810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.42, y: 0, z: 7.57}
+  m_LocalPosition: {x: 33.61, y: 0, z: 29.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1525321514}

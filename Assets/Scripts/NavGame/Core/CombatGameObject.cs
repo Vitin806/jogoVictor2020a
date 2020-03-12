@@ -2,17 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatGameObject : MonoBehaviour
+namespace NavGame.Core
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CombatGameObject : DamageableGameObject
     {
+        float cooldown = 0f;
         
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        protected virtual void Update()
+        {
+            DecreaseAttackCoolDown();
+        }
+        public void AttackOnCoolDown(DamageableGameObject target)
+        {
+            if (cooldown <= 0f)
+            {
+                cooldown = 1f / stats.attackSpeed;
+                target.TakeDamage(stats.damage);
+            }
+        }
+
+        void DecreaseAttackCoolDown()
+        {
+            if (cooldown == 0f)
+            {
+                return;
+            }
+            cooldown = cooldown - Time.deltaTime;
+            if (cooldown < 0f)
+            {
+                cooldown = 0f;
+            }
+        }
+
     }
 }
